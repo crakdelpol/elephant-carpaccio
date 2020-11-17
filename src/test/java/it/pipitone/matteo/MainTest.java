@@ -3,7 +3,9 @@ package it.pipitone.matteo;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
+import java.math.BigDecimal;
+
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MainTest {
@@ -11,8 +13,8 @@ public class MainTest {
     @Test
     public void retrieveProductOfParameters() {
 
-        Integer result = Main.productOfParameters("1", "2");
-        assertThat(result, is(2));
+        BigDecimal result = Main.productOfParameters("1", "2");
+        assertThat(result, equalTo(BigDecimal.valueOf(2)));
 
     }
 }
