@@ -25,7 +25,7 @@ public class ParameterConverterUnitTests {
         assertThat(itemNumber, is(1));
     }
 
-    @Test(expected = NumberFormatException.class)
+    @Test(expected = NonconvertibleItemNumberException.class)
     public void StringValueThrowException() {
         parameterConverter.convertItemNumber("S");
     }
@@ -36,7 +36,7 @@ public class ParameterConverterUnitTests {
         assertThat(itemNumber, comparesEqualTo(BigDecimal.ONE));
     }
 
-    @Test(expected = NumberFormatException.class)
+    @Test(expected = NonconvertibleItemPriceException.class)
     public void convertItemsPriceWithInconvertible() {
         parameterConverter.convertToPrice("S");
     }
