@@ -15,12 +15,14 @@ public class Order {
     }
 
     protected BigDecimal calculateTotalOfProduct(){
-        return  itemsNumber.multiply(price);
+        return itemsNumber.multiply(price);
     }
 
-    public BigDecimal calculateTotalOfProductWithTax(){
+    public BigDecimal calculateTotalOfProductWithTaxAndDiscount(){
         BigDecimal totalOfProduct = calculateTotalOfProduct();
-        return TaxCalculator.addTax(totalOfProduct, state);
+        BigDecimal totalWithDiscount = totalOfProduct.multiply(BigDecimal.valueOf(.90));
+        BigDecimal totalWithTax = TaxCalculator.addTax(totalWithDiscount, state);
+        return totalWithTax;
     }
 
 }

@@ -17,22 +17,16 @@ public class OrderUnitTest {
         assertThat(order.calculateTotalOfProduct(), comparesEqualTo(BigDecimal.valueOf(2)));
     }
 
-    @Test
-    public void checkTaxCalculation() {
-        Order order = new Order("100","1", "10");
-
-        assertThat(order.calculateTotalOfProductWithTax(), comparesEqualTo(BigDecimal.valueOf(110)));
-    }
 
     @Test
     public void calculateTaxForStateUT() {
         Order order = new Order("100","1", "UT");
-        assertThat(order.calculateTotalOfProductWithTax(), comparesEqualTo(BigDecimal.valueOf(106.85)));
+        assertThat(order.calculateTotalOfProductWithTaxAndDiscount(), comparesEqualTo(BigDecimal.valueOf(96.17)));
     }
 
     @Test
     public void calculateTaxForStateAL() {
         Order order = new Order("100","1", "AL");
-        assertThat(order.calculateTotalOfProductWithTax(), comparesEqualTo(BigDecimal.valueOf(104)));
+        assertThat(order.calculateTotalOfProductWithTaxAndDiscount(), comparesEqualTo(BigDecimal.valueOf(93.60)));
     }
 }
