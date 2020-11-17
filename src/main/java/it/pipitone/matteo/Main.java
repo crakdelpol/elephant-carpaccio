@@ -8,19 +8,10 @@ public class Main {
 
         String firstParameter = args[0];
         String secondParameter = args[1];
-        BigDecimal totalAmount = productOfParameters(firstParameter, secondParameter);
-        BigDecimal totalWithTax = addTaxToTotalAmount(totalAmount);
-        System.out.println(totalWithTax);
-    }
+        Order order = new Order(firstParameter, secondParameter);
 
-    protected static BigDecimal addTaxToTotalAmount(BigDecimal totalAmount) {
-        return totalAmount.multiply(BigDecimal.valueOf(1.10));
-    }
-
-    protected static BigDecimal productOfParameters(String firstParameter, String secondParameter) {
-        BigDecimal itemsNumber = new BigDecimal(firstParameter);
-        BigDecimal price = new BigDecimal(secondParameter);
-        return itemsNumber.multiply(price);
+        BigDecimal totalOfProductWithTax = order.calculateTotalOfProductWithTax();
+        System.out.println(totalOfProductWithTax);
     }
 
 }
