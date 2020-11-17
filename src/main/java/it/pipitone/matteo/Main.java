@@ -12,7 +12,11 @@ public class Main {
 
         ParameterConverter parameterConverter = new ParameterConverter();
 
-        Order order = new Order(parameterConverter.convertItemNumber(firstParameter), secondParameter, thirdParameter);
+
+        Order order = new Order(
+                parameterConverter.convertItemNumber(firstParameter),
+                parameterConverter.convertToPrice(secondParameter),
+                thirdParameter);
 
         BigDecimal totalOfProductWithTax = order.calculateAmount();
         System.out.println(totalOfProductWithTax);
