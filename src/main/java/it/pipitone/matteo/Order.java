@@ -9,8 +9,8 @@ public class Order {
     private final DiscountCalculator discountCalculator;
     private final TaxCalculator taxCalculator;
 
-    public Order(String firstParameter, String secondParameter, String thirdParameter) {
-        this.itemsNumber = Integer.valueOf(firstParameter);
+    public Order(Integer numberOfItems, String secondParameter, String thirdParameter) {
+        this.itemsNumber = numberOfItems;
         this.price = new BigDecimal(secondParameter);
         this.discountCalculator = new DiscountCalculator();
         this.taxCalculator = new TaxCalculator(thirdParameter);

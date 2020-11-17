@@ -9,7 +9,10 @@ public class Main {
         String firstParameter = args[0];
         String secondParameter = args[1];
         String thirdParameter = args[2];
-        Order order = new Order(firstParameter, secondParameter, thirdParameter);
+
+        ParameterConverter parameterConverter = new ParameterConverter();
+
+        Order order = new Order(parameterConverter.convertItemNumber(firstParameter), secondParameter, thirdParameter);
 
         BigDecimal totalOfProductWithTax = order.calculateAmount();
         System.out.println(totalOfProductWithTax);
