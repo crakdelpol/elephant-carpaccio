@@ -6,7 +6,11 @@ public class Main {
 
         String firstParameter = args[0];
         String secondParameter = args[1];
-        System.out.println("first parameter " + firstParameter + " second Parameter "+ secondParameter);
+        System.out.println(concatParameters(firstParameter, secondParameter));
+    }
+
+    protected static String concatParameters(String firstParameter, String secondParameter) {
+        return firstParameter+secondParameter;
     }
 
 }
