@@ -9,11 +9,11 @@ public class Order {
     private final DiscountCalculator discountCalculator;
     private final TaxCalculator taxCalculator;
 
-    public Order(Integer numberOfItems, BigDecimal itemsPrice, String thirdParameter) {
+    public Order(Integer numberOfItems, BigDecimal itemsPrice, String state) {
         this.numberOfItems = numberOfItems;
         this.price = itemsPrice;
         this.discountCalculator = new DiscountCalculator();
-        this.taxCalculator = new TaxCalculator(thirdParameter);
+        this.taxCalculator = new TaxCalculator(state);
     }
 
     protected BigDecimal calculateTotalOfProduct(){
