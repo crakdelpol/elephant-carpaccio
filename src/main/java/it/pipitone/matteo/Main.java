@@ -4,7 +4,9 @@ public class Main {
 
     public static void main(String[]args){
 
-        System.out.println("first parameter " + args[0]);
+        String firstParameter = args[0];
+        String secondParameter = args[1];
+        System.out.println("first parameter " + firstParameter + " second Parameter "+ secondParameter);
     }
 
 }
