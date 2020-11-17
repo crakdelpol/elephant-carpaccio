@@ -20,7 +20,7 @@ public class Order {
 
     public BigDecimal calculateTotalOfProductWithTaxAndDiscount(){
         BigDecimal totalOfProduct = calculateTotalOfProduct();
-        BigDecimal totalWithDiscount = totalOfProduct.multiply(BigDecimal.valueOf(.90));
+        BigDecimal totalWithDiscount = DiscountCalculator.calculateDiscount(totalOfProduct);
         BigDecimal totalWithTax = TaxCalculator.addTax(totalWithDiscount, state);
         return totalWithTax;
     }
