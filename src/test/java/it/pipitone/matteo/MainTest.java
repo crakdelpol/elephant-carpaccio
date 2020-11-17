@@ -11,8 +11,8 @@ public class MainTest {
     @Test
     public void retrieveProductOfParameters() {
 
-        String result = Main.productOfParameters("1", "2");
-        assertThat(result, is("2"));
+        Integer result = Main.productOfParameters("1", "2");
+        assertThat(result, is(2));
 
     }
 }

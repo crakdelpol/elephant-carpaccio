@@ -6,14 +6,15 @@ public class Main {
 
         String firstParameter = args[0];
         String secondParameter = args[1];
-        System.out.println(productOfParameters(firstParameter, secondParameter));
+        Integer totalAmount = productOfParameters(firstParameter, secondParameter);
+        System.out.println(totalAmount);
     }
 
-    protected static String productOfParameters(String firstParameter, String secondParameter) {
+    protected static Integer productOfParameters(String firstParameter, String secondParameter) {
         int itemsNumber = Integer.parseInt(firstParameter);
         int price = Integer.parseInt(secondParameter);
 
-        return String.valueOf(itemsNumber*price);
+        return itemsNumber * price;
     }
 
 }
