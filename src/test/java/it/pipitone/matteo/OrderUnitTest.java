@@ -21,12 +21,12 @@ public class OrderUnitTest {
     @Test
     public void calculateTaxForStateUT() {
         Order order = new Order("100","1", "UT");
-        assertThat(order.calculateTotalOfProductWithTaxAndDiscount(), comparesEqualTo(BigDecimal.valueOf(96.17)));
+        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(96.17)));
     }
 
     @Test
     public void calculateTaxForStateAL() {
         Order order = new Order("100","1", "AL");
-        assertThat(order.calculateTotalOfProductWithTaxAndDiscount(), comparesEqualTo(BigDecimal.valueOf(93.60)));
+        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(93.60)));
     }
 }

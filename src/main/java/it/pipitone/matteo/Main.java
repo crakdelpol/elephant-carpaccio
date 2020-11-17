@@ -11,7 +11,7 @@ public class Main {
         String thirdParameter = args[2];
         Order order = new Order(firstParameter, secondParameter, thirdParameter);
 
-        BigDecimal totalOfProductWithTax = order.calculateTotalOfProductWithTaxAndDiscount();
+        BigDecimal totalOfProductWithTax = order.calculateAmount();
         System.out.println(totalOfProductWithTax);
     }
 
