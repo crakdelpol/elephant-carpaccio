@@ -10,7 +10,10 @@ public class Main {
     }
 
     protected static String concatParameters(String firstParameter, String secondParameter) {
-        return firstParameter+secondParameter;
+        int itemsNumber = Integer.parseInt(firstParameter);
+        int price = Integer.parseInt(secondParameter);
+
+        return String.valueOf(itemsNumber*price);
     }
 
 }

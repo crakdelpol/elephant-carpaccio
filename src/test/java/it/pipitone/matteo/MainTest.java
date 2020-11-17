@@ -12,7 +12,7 @@ public class MainTest {
     public void printConcatParameters() {
 
         String result = Main.concatParameters("1", "2");
-        assertThat(result, is("12"));
+        assertThat(result, is("2"));
 
     }
 }
