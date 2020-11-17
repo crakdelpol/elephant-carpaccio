@@ -20,7 +20,7 @@ public class Order {
     public Order(String firstParameter, String secondParameter, String thirdParameter) {
         this.itemsNumber = new BigDecimal(firstParameter);
         this.price = new BigDecimal(secondParameter);
-        this.tax = new BigDecimal(thirdParameter);
+        this.tax = taxMatrix.getOrDefault(thirdParameter, BigDecimal.valueOf(10));
     }
 
     protected BigDecimal calculateTotalOfProduct(){
