@@ -9,9 +9,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class MainTest {
 
     @Test
-    public void printConcatParameters() {
+    public void retrieveProductOfParameters() {
 
-        String result = Main.concatParameters("1", "2");
+        String result = Main.productOfParameters("1", "2");
         assertThat(result, is("2"));
 
     }

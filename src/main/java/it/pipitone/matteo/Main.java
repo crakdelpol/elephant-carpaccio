@@ -6,10 +6,10 @@ public class Main {
 
         String firstParameter = args[0];
         String secondParameter = args[1];
-        System.out.println(concatParameters(firstParameter, secondParameter));
+        System.out.println(productOfParameters(firstParameter, secondParameter));
     }
 
-    protected static String concatParameters(String firstParameter, String secondParameter) {
+    protected static String productOfParameters(String firstParameter, String secondParameter) {
         int itemsNumber = Integer.parseInt(firstParameter);
         int price = Integer.parseInt(secondParameter);
 
