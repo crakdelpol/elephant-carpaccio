@@ -13,13 +13,13 @@ public class OrderUnitTest {
     @Test
     public void retrieveProductOfParameters() {
 
-        Order order = new Order("1","2");
+        Order order = new Order("1","2", "10");
         assertThat(order.calculateTotalOfProduct(), comparesEqualTo(BigDecimal.valueOf(2)));
     }
 
     @Test
     public void checkTaxCalculation() {
-        Order order = new Order("100","1");
+        Order order = new Order("100","1", "10");
 
         assertThat(order.calculateTotalOfProductWithTax(), comparesEqualTo(BigDecimal.valueOf(110)));
     }
