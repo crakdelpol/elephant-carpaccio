@@ -11,11 +11,13 @@ public class TaxCalculatorTest {
 
     @Test
     public void calculateTaxForStateUT() {
-        assertThat(TaxCalculator.addTax(BigDecimal.valueOf(100), "UT"), comparesEqualTo(BigDecimal.valueOf(106.85)));
+        TaxCalculator taxCalculator = new TaxCalculator("UT");
+        assertThat(taxCalculator.addTax(BigDecimal.valueOf(100)), comparesEqualTo(BigDecimal.valueOf(106.85)));
     }
 
     @Test
     public void calculateTaxForStateAL() {
-        assertThat(TaxCalculator.addTax(BigDecimal.valueOf(100), "AL"), comparesEqualTo(BigDecimal.valueOf(104)));
+        TaxCalculator taxCalculator = new TaxCalculator("AL");
+        assertThat(taxCalculator.addTax(BigDecimal.valueOf(100)), comparesEqualTo(BigDecimal.valueOf(104)));
     }
 }

@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.util.HashMap;
 
 public class TaxCalculator {
+    private final String state;
 
     final static HashMap<String, BigDecimal> taxMatrix = new HashMap<String, BigDecimal>() {{
         put("UT", BigDecimal.valueOf(6.85));
@@ -14,7 +15,11 @@ public class TaxCalculator {
         put("CA", BigDecimal.valueOf(8.25));
     }};
 
-    protected static BigDecimal addTax(BigDecimal bigDecimal, String state) {
-        return bigDecimal.multiply(BigDecimal.valueOf(100).add(taxMatrix.getOrDefault(state, BigDecimal.valueOf(10)))).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+    public TaxCalculator(String state) {
+        this.state = state;
+    }
+
+    protected BigDecimal addTax(BigDecimal bigDecimal) {
+        return bigDecimal.multiply(BigDecimal.valueOf(100).add(taxMatrix.getOrDefault(this.state, BigDecimal.valueOf(10)))).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
     }
 }
