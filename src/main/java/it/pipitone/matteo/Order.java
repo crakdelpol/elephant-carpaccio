@@ -4,20 +4,20 @@ import java.math.BigDecimal;
 
 public class Order {
 
-    private final Integer itemsNumber;
+    private final Integer numberOfItems;
     private final BigDecimal price;
     private final DiscountCalculator discountCalculator;
     private final TaxCalculator taxCalculator;
 
     public Order(Integer numberOfItems, BigDecimal itemsPrice, String thirdParameter) {
-        this.itemsNumber = numberOfItems;
+        this.numberOfItems = numberOfItems;
         this.price = itemsPrice;
         this.discountCalculator = new DiscountCalculator();
         this.taxCalculator = new TaxCalculator(thirdParameter);
     }
 
     protected BigDecimal calculateTotalOfProduct(){
-        return price.multiply(BigDecimal.valueOf(itemsNumber));
+        return price.multiply(BigDecimal.valueOf(numberOfItems));
     }
 
     public BigDecimal calculateAmount(){
