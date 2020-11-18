@@ -19,14 +19,14 @@ public class OrderUnitTest {
 
 
     @Test
-    public void calculateTaxForStateUT() {
+    public void calculateAmountForUtWithoutDiscount() {
         Order order = new Order(100,BigDecimal.ONE, "UT");
-        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(96.17)));
+        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(106.85)));
     }
 
     @Test
-    public void calculateTaxForStateAL() {
-        Order order = new Order(100,BigDecimal.ONE, "AL");
-        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(93.60)));
+    public void calculateAmountForALWithDiscount() {
+        Order order = new Order(1000, BigDecimal.ONE, "AL");
+        assertThat(order.calculateAmount(), comparesEqualTo(BigDecimal.valueOf(1008.8)));
     }
 }
